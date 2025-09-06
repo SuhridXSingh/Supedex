@@ -1,0 +1,829 @@
+/* === General Reset === */
+body {
+  background-color: #0e0e1a;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #e50914;
+  font-size: 30px;
+  margin: 30px 0 20px;
+}
+
+/* HOME BUTTON  */
+.home-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease;
+}
+
+.home-link:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* === Flip Card Core === */
+.card-container {
+  perspective: 1000px;
+  width: 280px;
+  margin: auto;
+}
+
+.card {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.card-container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 3px solid;
+}
+
+/* === Homelander Theme === */
+.homelander-card .card-front {
+  background: linear-gradient(135deg, #1a1a2e, #3f0d12);
+  border-color: #fd1f02;
+  box-shadow: 0 0 20px rgba(255, 30, 0, 0.6);
+}
+
+.homelander-card .card-back {
+  background: linear-gradient(135deg, #3f0d12, #1a1a2e);
+  border-color: #fd1f02;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-front img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid #c00;
+}
+
+.card-front h2,
+.card-back h2 {
+  color: #d2b02b;
+  font-size: 24px;
+  margin: 15px 0 10px;
+}
+
+.card-back p {
+  color: #e7e4e4;
+  font-size: 16px;
+  padding: 0 10px;
+}
+
+/* === Stats Bar === */
+.stat {
+  margin: 8px 0;
+  text-align: left;
+}
+
+.stat span {
+  display: block;
+  font-weight: bold;
+  color: #ffcc00;
+  margin-bottom: 5px;
+}
+
+.bar {
+  width: 200px;
+  height: 10px;
+  background-color: #2d2d2d;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(to right, #f00, #ffcc00);
+  border-radius: 6px;
+}
+/* === Starlight Theme === */
+.starlight-card .card-front {
+  background: linear-gradient(135deg, #fff8dc, #ffeb3b);
+  border-color: #ffdd57;
+  box-shadow: 0 0 20px rgba(255, 223, 100, 0.7);
+  color: #333;
+}
+
+.starlight-card .card-back {
+  background: linear-gradient(135deg, #999386, #685507);
+  border-color: #ffdd57;
+  transform: rotateY(180deg);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.starlight-card h2 {
+  color: #6e571e;
+}
+
+.starlight-card .fill {
+  background: linear-gradient(to right, #fff700, #ffd700);
+}
+
+/* === Butcher Theme === */
+.butcher-card .card-front {
+  background: linear-gradient(135deg, #0f0f0f, #2c2c2c);
+  border-color: #8b0000;
+  box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+  color: #ccc;
+}
+
+.butcher-card .card-back {
+  background: linear-gradient(135deg, #1c1c1c, #000000);
+  border-color: #8b0000;
+  transform: rotateY(180deg);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.butcher-card h2 {
+  color: #ff4c4c;
+}
+
+.butcher-card .fill {
+  background: linear-gradient(to right, #8b0000, #ff4c4c);
+}
+
+/* FOR HOMEPAGE */
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: #ffcc00;
+  margin-top: 30px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #ccc;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-bottom: 40px;
+}
+
+/* Grid for homepage cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px 40px;
+}
+
+/* Base card style */
+.mini-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+  border: 2px solid transparent;
+}
+
+.mini-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.mini-card p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.mini-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Supe-specific border colors */
+.homelander-mini {
+  border-color: #ff1e00;
+}
+.starlight-mini {
+  border-color: #ffd700;
+}
+.butcher-mini {
+  border-color: #8b0000;
+}
+.butcher-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #ff0228c7;
+}
+.homelander-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #ff02fb;
+}
+.starlight-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #f7ff02e2;
+}
+/* === Soldier Boy Final Style === */
+
+body.soldierboy-bg {
+  background: url("images/soldierboy-bg.jpg") center/cover no-repeat fixed;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #ffd000; /* golden yellow */
+}
+
+/* Card Container */
+.soldierboy-card {
+  width: 320px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+/* Inner Flipping Area */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip Trigger */
+.soldierboy-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Common Sides */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(
+    to bottom,
+    #000000,
+    #0c380c
+  ); /* black to dark green */
+  box-shadow: 0 0 20px 2px #0f4900c1; /* green glow */
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 12px;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffd700;
+}
+
+/* Front Content */
+.card-front h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-front img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0.5rem 0;
+  border: 1px solid #222;
+}
+
+/* Stat Bars */
+.sstats {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.sstat {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.sstat span {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.sbar {
+  width: 100%;
+  height: 12px;
+  background: #111;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.sfill {
+  height: 100%;
+  background: #ffd700; /* golden yellow */
+  width: 0%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+/* Set bar fill widths in HTML inline using style="width: XX%" */
+
+/* Back Content */
+.card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+}
+
+.dialogue {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #ffd900;
+  margin-bottom: 1rem;
+}
+
+.lore {
+  color: #ffd700;
+  font-size: 0.9rem;
+  padding: 0 0.5rem;
+  line-height: 1.4;
+}
+.Soldierboy-mini {
+  border: 3px solid #125227;
+  border-radius: 12px;
+  padding: 4px;
+  background-color: #0a1a0a;
+  box-shadow: 0 0 10px #076225;
+}
+.Soldierboy-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #ff02fb;
+}
+/* === A-Train Card Only === */
+
+body.atrain-bg {
+  background: linear-gradient(to bottom, #000010, #001a33);
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #e0f7ff;
+}
+
+/* Flip speed specific to A-Train */
+.atrain-card .card-inner {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Outer card */
+.atrain-card {
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+/* Inner flippable area */
+.atrain-card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+/* Flip trigger */
+.atrain-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared styling for front/back */
+.atrain-card .card-front,
+.atrain-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(to bottom right, #000000, #286cb0);
+  border: 2px solid #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #ffffff;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #e0f7ff;
+}
+
+/* Front specifics */
+.atrain-card .card-front h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #00bfff;
+}
+
+.atrain-card .card-front img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0.5rem 0;
+  border: 2px solid #f8f8f8;
+}
+
+/* Back specifics */
+.atrain-card .card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+}
+
+.atrain-card .dialogue {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.atrain-card .lore {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #e0f7ff;
+  padding: 0 0.5rem;
+}
+
+.atrain-card .fill {
+  background: linear-gradient(to right, #ffffff, #00a2ff);
+}
+
+.atrain-mini {
+  border: 3px solid #8cdcef; /* bright blue border */
+  background-color: #082432; /* white inner frame */
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 0 12px #167290; /* blue glow */
+  transition: transform 0.2s ease;
+}
+.disclaimer {
+  margin-top: 4rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+  background: #111;
+  border-top: 1px solid #333;
+  font-style: italic;
+}
+.atrain-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #00f6fbcc;
+}
+/* === Queen Maeve Card === */
+
+body.maeve-bg {
+  background: linear-gradient(to bottom, #333232, #000000);
+  font-family: "Georgia", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #ffd6c1;
+}
+
+/* Card Container */
+.maeve-card {
+  width: 320px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+/* Flip Container */
+.maeve-card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.maeve-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front + Back Shared */
+.maeve-card .card-front,
+.maeve-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(to bottom right, #330000, #262525);
+  border: 2px solid #b87333; /* bronze */
+  border-radius: 14px;
+  box-shadow: 0 0 15px #80202088;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FRONT */
+.maeve-card .card-front h2 {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  color: #ffcccc;
+}
+
+.maeve-card .card-front img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  border: 2px solid #b87333;
+  object-fit: cover;
+}
+
+/* BACK */
+.maeve-card .card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+  color: #ffd6c1;
+}
+
+.maeve-card .dialogue {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ff9999;
+}
+
+.maeve-card .lore {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+}
+
+.maeve-card .fill {
+  background: linear-gradient(to right, #400c0c, #ffffff);
+}
+.maeve-mini {
+  border: 3px solid #b87333; /* Bronze border */
+  background-color: #2a1a1a; /* Muted dark background */
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 0 10px #ff334455; /* Subtle red glow */
+  transition: transform 0.2s ease;
+}
+
+/* Optional: Hover pop effect */
+.maeve-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #ff3344cc;
+}
+/* === Black Noir Card === */
+
+body.noir-bg {
+  background: linear-gradient(to bottom, #050505, #0e0e0e);
+  font-family: 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: #cccccc;
+}
+
+/* Card container */
+.noir-card {
+  width: 320px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+/* Flip container */
+.noir-card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.noir-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back shared */
+.noir-card .card-front,
+.noir-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: radial-gradient(#111111, #000000);
+  border: 2px solid #555;
+  border-radius: 14px;
+  box-shadow: 0 0 12px #00000088;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Front specifics */
+.noir-card .card-front h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #dddddd;
+}
+
+.noir-card .card-front img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  border: 2px solid #333;
+  object-fit: cover;
+}
+
+/* Back specifics */
+.noir-card .card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+  color: #cccccc;
+}
+
+.noir-card .dialogue {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #999;
+}
+
+.noir-card .lore {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+  color: #ccc;
+}
+.noir-card .fill {
+  background: linear-gradient(to right, #000000, #ffffff);
+}
+.noir-mini {
+  border: 3px solid #5c5b5a; /* Bronze border */
+  background-color: #000000; /* Muted dark background */
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 0 10px #6d6a6a; /* Subtle red glow */
+  transition: transform 0.2s ease;
+}
+.noir-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #ffffff;
+}
+/* === Translucent Card === */
+
+body.translucent-bg {
+  background: url('images/translucent-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Frosted glass card container */
+.translucent-card {
+  width: 320px;
+  height: 500px;
+  perspective: 1000px;
+}
+
+.translucent-card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.translucent-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Shared front/back glass look */
+.translucent-card .card-front,
+.translucent-card .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(200, 200, 255, 0.2);
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  box-sizing: border-box;
+  color: #e0f7ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FRONT */
+.translucent-card .card-front h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #e0f7ff;
+}
+
+.translucent-card .card-front img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+}
+
+/* BACK */
+.translucent-card .card-back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  text-align: center;
+}
+
+.translucent-card .dialogue {
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.translucent-card .lore {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+  color: #c4d7dd;
+}
+.translucent-card .fill {
+  background: linear-gradient(to right, #ffffff, #312d2d);
+}
+.Translucent-mini {
+  border: 2px solid rgba(158, 231, 255, 0.3); /* subtle icy blue */
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);      /* glassy look */
+  backdrop-filter: blur(6px);
+  padding: 4px;
+  box-shadow: 0 0 8px rgba(158, 231, 255, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.Translucent-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(158, 231, 255, 0.5);
+}
+
+
+
+
