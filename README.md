@@ -1,4 +1,4 @@
-# 🦸‍♂️ SupeDex: The Boys Universe Database
+# 🦸‍♂️ SupeDex: The Boys Universe Database (https://supedex-ve2.netlify.app/)
 
 **SupeDex** is a fan-made web project inspired by *The Boys* universe — a digital encyclopedia of supes with unique stat cards, individual pages, and an upcoming **AI-powered Versus Mode**.  
 Built from scratch with **HTML, CSS, and JavaScript**, SupeDex is designed to evolve as the project (and its creator 😎) grows in web development skills.
